@@ -9,12 +9,14 @@ This is the API for tracking our Daily Transaction (Income & Expense).
 - [How to use](#how-to-use)
 
 # Entity Relations Diagram
-This is the database entity that CashInCashOut have
+This is the database entity that CashInCashOut have<br>
 <img src="diagrams/ERD.png">
+</br>
 
 # Use Case Diagram
-This is the Use Case that CashInCashOut have
+This is the Use Case that CashInCashOut have<br>
 <img src="diagrams/Use Case.png">
+</br>
 
 # Tech Stacks
 
