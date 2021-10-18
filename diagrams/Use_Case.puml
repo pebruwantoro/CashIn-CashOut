@@ -1,0 +1,36 @@
+@startuml Use Case
+
+skinparam actorStyle awesome
+left to right direction
+actor "User" as User
+rectangle Income {
+	usecase "Create Income" as CI
+	usecase "Read Income" as RI
+	usecase "Update Income" as UI
+	usecase "Delete Income" as DI
+}
+rectangle Expense {
+	usecase "Create Expenese" as CE
+	usecase "Read Expenese" as RE
+	usecase "Update Expenese" as UE
+	usecase "Delete Expenese" as DE
+}
+rectangle Summary {
+	usecase "Create Summary" as CS
+	usecase "Read Summary" as RS
+	usecase "Update Summary" as US
+	usecase "Delete Summary" as DS
+}
+User --> CI
+User --> RI
+User --> UI
+User --> DI
+User --> CE
+User --> RE
+User --> UE
+User --> DE
+User --> CS
+User --> RS
+User --> US
+User --> DS
+@enduml

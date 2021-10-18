@@ -1,0 +1,65 @@
+@startuml ERD
+' hide the spot
+hide circle
+
+' avoid problems with angled crows feet
+skinparam linetype ortho
+
+entity "User" as User {
+  *ID : uint (PK)
+  --
+  *Username : varchar(16)
+  *First_Name : varchar(20)
+  *Last_Name : varchar(20)
+  *Email : varchar(50)
+  *Password : varchar(16)
+  *Phone_Number : varchar(15)
+  *Age : uint
+  *CreatedAt : Date
+  *UpdatedAt : Date
+  *DeletedAt : Date
+}
+
+entity "Income" as Income {
+  *ID : uint (PK)
+  --
+  *Title : varchar(20)
+  *Transaction_Date : Date
+  *Category : enum('Salary', 'Investment', 'Bonus', 'Profit', 'Other')
+  *Currency : enum('Rp', 'US$', 'Euro')
+  *Amount : int
+  *CreatedAt : Date
+  *UpdatedAt : Date
+  *DeletedAt : Date
+}
+
+entity "Expense" as Expense {
+  *ID : uint (PK)
+  --
+  *Title : varchar(20)
+  *Transaction_Date : Date
+  *Category : enum('Shopping', 'Meals', 'Transportation', 'Electricity Bills', 'Phone Bills', 'Other')
+  *Amount : int
+  *CreatedAt : Date
+  *UpdatedAt : Date
+  *DeletedAt : Date
+}
+
+entity "Summary" as Summary {
+  *ID : uint (PK)
+  --
+  *Total_Income : int
+  *Total_Expenses : int
+  *Average_Expense : int
+  *PnL : int
+  *CreatedAt : Date
+  *UpdatedAt : Date
+  *DeletedAt : Date
+}
+
+User ||..|{ Income
+User ||..|{ Expense
+Income }|..|| Summary
+Expense }|..|| Summary
+
+@enduml
